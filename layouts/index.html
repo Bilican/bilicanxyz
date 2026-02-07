@@ -1,0 +1,24 @@
+{{ define "main" }}
+<ul class="post-list">
+  {{ $allPages := slice }}
+  {{ range .Sites }}
+    {{ range .RegularPages }}
+      {{ $allPages = $allPages | append . }}
+    {{ end }}
+  {{ end }}
+  {{ range sort $allPages "Date" "desc" }}
+  <li class="post-item">
+    <div class="post-item-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </div>
+    <div class="post-meta">
+      <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+      <span>·</span>
+      <span>{{ .ReadingTime }} min read</span>
+      <span>·</span>
+      <span class="lang-tag">{{ upper .Lang }}</span>
+    </div>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

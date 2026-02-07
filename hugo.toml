@@ -1,0 +1,31 @@
+baseURL = "https://bilican.xyz"
+title = "Ahmet Bilican"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[languages]
+  [languages.en]
+    languageName = "EN"
+    weight = 1
+    contentDir = "content/en"
+    title = "Ahmet Bilican"
+    [languages.en.params]
+
+  [languages.tr]
+    languageName = "TR"
+    weight = 2
+    contentDir = "content/tr"
+    title = "Ahmet Bilican"
+    [languages.tr.params]
+
+[params]
+  description = "Personal blog by Ahmet Bilican"
+  author = "Ahmet Bilican"
+
+[outputs]
+  home = ["HTML", "RSS"]

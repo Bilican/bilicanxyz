@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="site-title">
+    <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+  </div>
+  <nav class="site-nav">
+    {{ range .Site.Home.AllTranslations }}
+      {{ if eq $.Site.Language.Lang .Language.Lang }}
+        <span class="lang-active">{{ .Language.LanguageName }}</span>
+      {{ else }}
+        <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+      {{ end }}
+    {{ end }}
+    {{ partial "theme-toggle.html" . }}
+  </nav>
+</header>

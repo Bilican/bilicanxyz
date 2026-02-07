@@ -1,0 +1,9 @@
+[home]
+other = "Ana Sayfa"
+
+[posts]
+other = "Yazılar"
+
+[readingTime]
+one = "{{ .Count }} dk okuma"
+other = "{{ .Count }} dk okuma"

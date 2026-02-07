@@ -1,0 +1,9 @@
+[home]
+other = "Home"
+
+[posts]
+other = "Posts"
+
+[readingTime]
+one = "{{ .Count }} min read"
+other = "{{ .Count }} min read"
