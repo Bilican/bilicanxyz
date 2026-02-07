@@ -15,7 +15,7 @@ function updateIcon(theme) {
 }
 (function() {
   var t = localStorage.getItem('theme');
-  var isDark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  var isDark = t === 'dark';
   updateIcon(isDark ? 'dark' : 'light');
 })();
 </script>

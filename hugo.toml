@@ -26,6 +26,7 @@ enableRobotsTXT = true
 [params]
   description = "Personal blog by Ahmet Bilican"
   author = "Ahmet Bilican"
+  goatcounterCode = "bilican"
 
 [outputs]
   home = ["HTML", "RSS"]
