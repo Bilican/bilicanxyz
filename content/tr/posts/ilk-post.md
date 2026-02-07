@@ -1,6 +1,6 @@
 +++
 date = '2026-02-07T10:52:18+03:00'
-draft = true
+draft = false
 title = 'Ilk Gönderi'
 +++
 
