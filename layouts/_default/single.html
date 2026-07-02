@@ -9,6 +9,14 @@
       <span>·</span>
       <span class="lang-tag">{{ upper .Lang }}</span>
     </div>
+    <div class="post-actions">
+      <button class="copy-btn" type="button" data-copy-post>
+        <span class="copy-label">Copy post</span>
+      </button>
+      <button class="copy-btn" type="button" data-copy-link>
+        <span class="copy-label">Copy link</span>
+      </button>
+    </div>
   </header>
 
   <div class="post-content">
@@ -17,4 +25,58 @@
 
   <a href="{{ .Site.Home.RelPermalink }}" class="back-link">← {{ i18n "home" }}</a>
 </article>
+
+<script>
+(function () {
+  function flash(btn, msg) {
+    var label = btn.querySelector('.copy-label');
+    if (!label.dataset.orig) label.dataset.orig = label.textContent;
+    label.textContent = msg;
+    btn.classList.add('copied');
+    setTimeout(function () {
+      label.textContent = label.dataset.orig;
+      btn.classList.remove('copied');
+    }, 1800);
+  }
+  function copyText(text, btn) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { flash(btn, 'Copied ✓'); },
+        function () { fallback(text, btn); }
+      );
+    } else {
+      fallback(text, btn);
+    }
+  }
+  function fallback(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); flash(btn, 'Copied ✓'); }
+    catch (e) { flash(btn, 'Press Ctrl+C'); }
+    document.body.removeChild(ta);
+  }
+  function postText() {
+    var src = document.querySelector('.post-content');
+    if (!src) return '';
+    var parts = [];
+    var title = document.querySelector('.post-title');
+    if (title) parts.push(title.textContent.trim());
+    Array.prototype.forEach.call(src.children, function (node) {
+      if (node.tagName === 'FIGURE') return; // skip diagrams
+      var t = node.innerText || node.textContent || '';
+      t = t.trim();
+      if (t) parts.push(t);
+    });
+    return parts.join('\n\n');
+  }
+  var postBtn = document.querySelector('[data-copy-post]');
+  if (postBtn) postBtn.addEventListener('click', function () { copyText(postText(), postBtn); });
+  var linkBtn = document.querySelector('[data-copy-link]');
+  if (linkBtn) linkBtn.addEventListener('click', function () { copyText(window.location.href, linkBtn); });
+})();
+</script>
 {{ end }}

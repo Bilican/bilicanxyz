@@ -299,6 +299,34 @@ img {
   }
 }
 
+/* === Post actions (copy buttons) === */
+.post-actions {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+.copy-btn {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--tag-bg) 50%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.32rem 0.75rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.copy-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.copy-btn.copied {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
 /* === Article enhancements (scoped to post bodies) === */
 
 /* Opening line gets a touch more presence */

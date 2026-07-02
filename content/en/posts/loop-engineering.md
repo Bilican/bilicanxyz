@@ -1,7 +1,7 @@
 +++
 date = '2026-07-02T10:00:00+03:00'
 draft = false
-title = 'Diving Into Loop Engineering'
+title = 'Loop Engineering: Worth It Yet?'
 description = 'Notes on loop engineering: what can and cannot be offloaded to an agent, and why you should never let an agent grade itself.'
 tags = ['loop-engineering', 'claude-code', 'ai-agents']
 +++
