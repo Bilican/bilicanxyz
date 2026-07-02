@@ -4,6 +4,7 @@ draft = false
 title = 'Loop Engineering: Worth It Yet?'
 description = 'Notes on loop engineering: what can and cannot be offloaded to an agent, and why you should never let an agent grade itself.'
 tags = ['loop-engineering', 'claude-code', 'ai-agents']
+hero = '/images/loop-hero.jpg'
 +++
 
 {{< callout type="author" >}}

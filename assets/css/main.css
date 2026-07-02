@@ -299,6 +299,16 @@ img {
   }
 }
 
+/* === Post hero image === */
+.post-hero {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
 /* === Post actions (copy buttons) === */
 .post-actions {
   display: flex;
