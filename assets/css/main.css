@@ -298,3 +298,151 @@ img {
     hyphens: none;
   }
 }
+
+/* === Article enhancements (scoped to post bodies) === */
+
+/* Opening line gets a touch more presence */
+.post-content > p:first-of-type {
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Headings carry the accent so sections read at a glance */
+.post-content h2 {
+  margin-top: 2.6rem;
+}
+.post-content h2::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 2px;
+  margin-top: 0.5rem;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.post-content h3 {
+  color: var(--accent);
+}
+
+/* Lists: softer, accent markers, room to breathe */
+.post-content ul {
+  list-style: none;
+  margin: 1.2rem 0;
+  padding-left: 1.4rem;
+}
+.post-content ul li {
+  position: relative;
+  margin-bottom: 0.55rem;
+}
+.post-content ul li::before {
+  content: "";
+  position: absolute;
+  left: -1.4rem;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.post-content ol {
+  padding-left: 1.4rem;
+  margin: 1.2rem 0;
+}
+.post-content ol li {
+  margin-bottom: 0.55rem;
+}
+
+/* === Figures === */
+figure.diagram {
+  margin: 2.4rem 0;
+  padding: 1.2rem 1.2rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tag-bg) 45%, transparent);
+}
+figure.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+figure.diagram figcaption {
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Shared diagram element classes (inherit theme variables) */
+.dgm-line   { stroke: var(--border); stroke-width: 2; }
+.dgm-arrow  { stroke: var(--text-secondary); stroke-width: 2; fill: none; }
+.dgm-panel  { fill: color-mix(in srgb, var(--tag-bg) 55%, transparent); stroke: var(--border); stroke-width: 1.5; }
+.dgm-node   { fill: var(--tag-bg); stroke: var(--border); stroke-width: 1.5; }
+.dgm-node-accent { fill: color-mix(in srgb, var(--accent) 14%, var(--bg)); stroke: var(--accent); stroke-width: 1.5; }
+.dgm-badge  { fill: var(--accent); }
+.dgm-badge-text { fill: var(--bg); font-weight: 700; }
+.dgm-text        { fill: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+.dgm-text-strong { fill: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 700; }
+.dgm-accent      { fill: var(--accent); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 700; }
+.dgm-muted       { fill: var(--text-secondary); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+.dgm-danger        { stroke: #C0492F; }
+.dgm-danger-text   { fill: #C0492F; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 700; }
+
+/* === Callouts === */
+.callout {
+  margin: 2rem 0;
+  padding: 1.1rem 1.3rem;
+  border-radius: 8px;
+}
+.callout-body > :last-child { margin-bottom: 0; }
+.callout-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Note: accent bar + tinted background */
+.callout-note {
+  background: color-mix(in srgb, var(--tag-bg) 55%, transparent);
+  border-left: 3px solid var(--accent);
+}
+
+/* Author note: quiet, italic, sits at the top of the piece */
+.callout-author {
+  background: color-mix(in srgb, var(--tag-bg) 40%, transparent);
+  border: 1px solid var(--border);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  text-align: justify;
+}
+
+/* Principle: a loud pull-quote for the one rule that matters */
+.callout-principle {
+  text-align: center;
+  padding: 1.8rem 1.4rem;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0;
+}
+.callout-principle .callout-body {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--accent);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 600px) {
+  figure.diagram { padding: 0.8rem 0.7rem 0.3rem; }
+  .callout-principle .callout-body { font-size: 1.2rem; }
+  .post-content > p:first-of-type { font-size: 1.05rem; }
+}

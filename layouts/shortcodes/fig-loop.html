@@ -1,0 +1,35 @@
+<figure class="diagram">
+  <svg viewBox="0 0 680 460" role="img" aria-label="The feedback loop that wraps the agent: delegate, implement, verify, merge. You steer the delegation; the verification can be handed to a fresh agent.">
+    <defs>
+      <marker id="ah-loop" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" class="dgm-muted" />
+      </marker>
+    </defs>
+
+    <!-- clockwise arrows forming the ring -->
+    <path d="M 420 86 Q 505 112 548 196" class="dgm-arrow" marker-end="url(#ah-loop)" />
+    <path d="M 548 224 Q 505 308 420 334" class="dgm-arrow" marker-end="url(#ah-loop)" />
+    <path d="M 260 334 Q 175 308 132 224" class="dgm-arrow" marker-end="url(#ah-loop)" />
+    <path d="M 132 196 Q 175 112 260 86" class="dgm-arrow" marker-end="url(#ah-loop)" />
+
+    <!-- center label -->
+    <text x="340" y="205" text-anchor="middle" font-size="16" letter-spacing="0.12em" class="dgm-accent">THE LOOP</text>
+    <text x="340" y="227" text-anchor="middle" font-size="12.5" class="dgm-muted">merge with no human in it</text>
+
+    <!-- nodes -->
+    <text x="340" y="32" text-anchor="middle" font-size="12.5" class="dgm-accent">you steer this  ·  stays human</text>
+    <rect x="265" y="44" width="150" height="52" rx="10" class="dgm-node" />
+    <text x="340" y="75" text-anchor="middle" font-size="16" class="dgm-text-strong">Delegate</text>
+
+    <rect x="481" y="184" width="150" height="52" rx="10" class="dgm-node" />
+    <text x="556" y="215" text-anchor="middle" font-size="16" class="dgm-text-strong">Implement</text>
+
+    <rect x="265" y="324" width="150" height="52" rx="10" class="dgm-node-accent" />
+    <text x="340" y="355" text-anchor="middle" font-size="16" class="dgm-text-strong">Verify</text>
+    <text x="340" y="398" text-anchor="middle" font-size="12.5" class="dgm-accent">hand this to a fresh verifier</text>
+
+    <rect x="49" y="184" width="150" height="52" rx="10" class="dgm-node" />
+    <text x="124" y="215" text-anchor="middle" font-size="16" class="dgm-text-strong">Merge</text>
+  </svg>
+  <figcaption>The feedback loop that wraps the agent. You still own the steering; the verifier is the part you can hand off.</figcaption>
+</figure>

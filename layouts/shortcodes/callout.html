@@ -1,0 +1,6 @@
+{{- $type := .Get "type" | default "note" -}}
+{{- $label := .Get "label" -}}
+<aside class="callout callout-{{ $type }}">
+  {{- with $label }}<div class="callout-label">{{ . }}</div>{{ end -}}
+  <div class="callout-body">{{ .Inner | $.Page.RenderString (dict "display" "block") }}</div>
+</aside>
