@@ -312,8 +312,9 @@ img {
 /* === Post actions (copy buttons) === */
 .post-actions {
   display: flex;
+  justify-content: flex-end;
   gap: 0.55rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .copy-btn {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;

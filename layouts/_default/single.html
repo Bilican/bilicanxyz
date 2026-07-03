@@ -1,5 +1,14 @@
 {{ define "main" }}
 <article>
+  <div class="post-actions">
+    <button class="copy-btn" type="button" data-copy-post>
+      <span class="copy-label">Copy post</span>
+    </button>
+    <button class="copy-btn" type="button" data-copy-link>
+      <span class="copy-label">Copy link</span>
+    </button>
+  </div>
+
   {{ with .Params.hero }}
   <img class="post-hero" src="{{ . | relURL }}" alt="{{ $.Title }}" width="1600" height="640" loading="eager">
   {{ end }}
@@ -11,14 +20,6 @@
       <span>{{ .ReadingTime }} min read</span>
       <span>·</span>
       <span class="lang-tag">{{ upper .Lang }}</span>
-    </div>
-    <div class="post-actions">
-      <button class="copy-btn" type="button" data-copy-post>
-        <span class="copy-label">Copy post</span>
-      </button>
-      <button class="copy-btn" type="button" data-copy-link>
-        <span class="copy-label">Copy link</span>
-      </button>
     </div>
   </header>
 
