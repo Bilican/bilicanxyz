@@ -61,7 +61,7 @@ So the delegation part and the verification part that was handled by me should b
 
 No, because I'm the one actually steering the product and deciding what the product is, and what it is not. I should continue to be the judge of what gets added and what doesn't get added to the product.
 
-If the tasks are bug fixes then theoretically it can be offloaded but we have to have strong verifiers for a detect bugs as well as assuring they are solved. This implies a feature has been tested by a human and a verifier is constructed via human guidance for that specific feature.
+If the tasks are bug fixes then theoretically it can be offloaded but we have to have strong verifiers to detect bugs as well as assuring they are solved. This implies a feature has been tested by a human and a verifier is constructed via human guidance for that specific feature.
 
 ### Can I actually offload the task verification part to an agent?
 
@@ -88,7 +88,7 @@ The second approach would be to have a strong evaluator with fresh context but y
 
 This ties back into one of the key points I mentioned, which was a problem but which could be solved in a semi-successful manner. You could integrate ways to let the agent execute flows through your user interface by adding tags, proper naming tags or proper shortcuts to your app depending on which framework you use. You should most likely not let your coding agent, especially Claude Code, use its computer use feature where it drives apps through screenshots in the pixel space. This could make both versions of verifiers better.
 
-So Loop Engineering isn't worth it at the scale we are working at yet. There are useful concepts we can borrow and definitely things that we can learn from this literature, but it just doesn't fully make sense to transition to loops for our startup
+So Loop Engineering isn't worth it at the scale we are working at yet. There are useful concepts we can borrow and definitely things that we can learn from this literature, but it just doesn't fully make sense to transition to loops for our startup.
 
 Thank you for reading!
 
